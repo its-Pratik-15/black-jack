@@ -1,0 +1,188 @@
+.instructions-button {
+  background: #1b5e20;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.instructions-button:hover {
+  background: #2e7d32;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.instructions-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.instructions-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #2c3e50;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  scrollbar-width: thin;
+  scrollbar-color: #1b5e20 #f0f0f0;
+  animation: slideIn 0.3s ease-out;
+  transform-origin: center;
+}
+
+.instructions-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.instructions-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.instructions-content::-webkit-scrollbar-thumb {
+  background-color: #1b5e20;
+  border-radius: 4px;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background: #f0f0f0;
+}
+
+.instructions-content h2 {
+  color: #1b5e20;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.instructions-content h3 {
+  color: #2e7d32;
+  margin: 25px 0 15px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.instructions-content section {
+  margin-bottom: 20px;
+}
+
+.instructions-content ul,
+.instructions-content ol {
+  list-style: none;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.instructions-content ul li {
+  margin: 10px 0;
+  line-height: 1.7;
+  color: #4a4a4a;
+  font-size: 16px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.instructions-content ul li:before {
+  content: '♠';
+  position: absolute;
+  left: 0;
+  color: #1b5e20;
+  font-size: 18px;
+}
+
+.instructions-content ul li:nth-child(2n):before {
+  content: '♥';
+}
+
+.instructions-content ul li:nth-child(3n):before {
+  content: '♦';
+}
+
+.instructions-content ul li:nth-child(4n):before {
+  content: '♣';
+}
+
+.instructions-content ol {
+  counter-reset: card-counter;
+}
+
+.instructions-content ol li {
+  margin: 10px 0;
+  line-height: 1.7;
+  color: #4a4a4a;
+  font-size: 16px;
+  position: relative;
+  padding-left: 25px;
+  counter-increment: card-counter;
+}
+
+.instructions-content ol li:before {
+  content: counter(card-counter);
+  position: absolute;
+  left: 0;
+  color: #1b5e20;
+  font-weight: bold;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border: 1px solid #1b5e20;
+}
+
+.instructions-content p {
+  line-height: 1.8;
+  margin: 15px 0;
+  color: #4a4a4a;
+  font-size: 16px;
+}
+
+.instructions-content strong {
+  color: #1b5e20;
+}
