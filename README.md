@@ -2,6 +2,10 @@
 
 A modern, interactive Blackjack game built with React and Vite. Experience the classic casino card game with a sleek user interface and smooth gameplay.
 
+## Live Demo
+
+Try the game live at: [Blackjack Game](https://black-jack-mauve-ten.vercel.app/)
+
 ## Features
 
 - Interactive gameplay with intuitive controls
